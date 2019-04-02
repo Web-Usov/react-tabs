@@ -87,21 +87,21 @@ class App extends Component {
 	render() {
 		const { activeTab } = this.state
 		return (
-            <div>
-                <TabsNav activeTab={activeTab} setActive={this.setActive}>
-                    <TabsNavItem label="Tab 1" />
-                    <TabsNavItem label="Tab 2" />
-                </TabsNav>
+			<div>
+					<TabsNav activeTab={activeTab} setActive={this.setActive}>
+							<TabsNavItem label="Tab 1" />
+							<TabsNavItem label="Tab 2" />
+					</TabsNav>
 
-                <TabsContainer activeTab={activeTab}>
-                    <TabsItem label="Tab 1">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum cons</p>
-                    </TabsItem>
-                    <TabsItem label="Tab 2">
-                        <p>Fuga perferendis, maxime eum id ipsum, vel incidunt aspernatur sunt nam eaque culpa n</p>                       
-                    </TabsItem>
-                </TabsContainer>
-            </div>
+					<TabsContainer activeTab={activeTab}>
+							<TabsItem label="Tab 1">
+									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum cons</p>
+							</TabsItem>
+							<TabsItem label="Tab 2">
+									<p>Fuga perferendis, maxime eum id ipsum, vel incidunt aspernatur sunt nam eaque culpa n</p>                       
+							</TabsItem>
+					</TabsContainer>
+			</div>
 		);
 	}
 }
