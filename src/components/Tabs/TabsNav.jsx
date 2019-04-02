@@ -1,16 +1,14 @@
-import React, {Component} from 'react'
+import React from 'react'
 
-class TabsNav extends Component {
-    render(){
-        const {children,activeTab, setActive} = this.props
-        return (
-            <ul className="nav nav-tabs">
-                {React.Children.map(children, child =>  
-                    React.cloneElement(child, { activeTab, onClick:setActive }))
-                }
-            </ul>
-        )
-    }
-}
+const TabsNav = ({ children, activeTab, setActive }) => (
+    <ul className="nav nav-tabs">
+        {React.Children.map(children, (child, i) =>
+            React.cloneElement(child, { 
+                isActive:activeTab.toLowerCase() === child.props.label.toLowerCase() || (i === 0 && activeTab===""), 
+                onClick: setActive 
+            }))
+        }
+    </ul>
+)
 
 export default TabsNav

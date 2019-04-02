@@ -1,19 +1,12 @@
-import React, {Component} from 'react'
+import React from 'react'
 
-class TabsContainer extends Component {
-    render(){
-        const {children,activeTab} = this.props
-        if(children.length>0 && activeTab==='') return children[0]
-        return (
-            <div className="tab-content">
-                {React.Children.map(children, child => {
-                    
-                    if(child.props.label === activeTab) 
-                        return React.cloneElement(child, { isActive:true })
-                })}
-            </div>
-        )
-    }
-}
+const TabsContainer = ({children,activeTab}) => (
+    <div className="tab-content">
+        {React.Children.map(children, (child, i) => {                        
+            if(child.props.label.toLowerCase() === activeTab.toLowerCase() || (i === 0 && activeTab==="")) 
+                return React.cloneElement(child)
+        })}
+    </div>
+)
 
 export default TabsContainer
